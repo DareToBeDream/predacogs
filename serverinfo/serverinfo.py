@@ -74,14 +74,14 @@ class ServerInfo(commands.Cog):
         online_stats = {
             _("<:humans:724948692242792470> Humans: "): lambda x: not x.bot,
             _(" | <:bot:706196602804502678> Bots: "): lambda x: x.bot,
-            "\N<:online:502680874370990091>": lambda x: x.status is discord.Status.online,
-            "\N<:idle:724950462729551883>": lambda x: x.status is discord.Status.idle,
-            "\N<:dnd:502680840392671232>": lambda x: x.status is discord.Status.do_not_disturb,
-            "\N<:offline:724950462746460271>": lambda x: x.status is discord.Status.offline,
-            "\N<:streaming:724950551900717066>": lambda x: any(
+            "\n<:online:502680874370990091>": lambda x: x.status is discord.Status.online,
+            "<:idle:724950462729551883>": lambda x: x.status is discord.Status.idle,
+            "<:dnd:502680840392671232>": lambda x: x.status is discord.Status.do_not_disturb,
+            "<:offline:724950462746460271>": lambda x: x.status is discord.Status.offline,
+            "<:streaming:724950551900717066>": lambda x: any(
                 a.type is discord.ActivityType.streaming for a in x.activities
             ),
-            "\N<:mobile:725387684113023057>": lambda x: x.is_on_mobile(),
+            "<:mobile:725387684113023057>": lambda x: x.is_on_mobile(),
         }
         member_msg = _("Users online: **{online}/{total_users}**\n").format(
             online=online, total_users=total_users
