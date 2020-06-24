@@ -81,7 +81,7 @@ class ServerInfo(commands.Cog):
             "\N{<:streaming:724950551900717066>}": lambda x: any(
                 a.type is discord.ActivityType.streaming for a in x.activities
             ),
-            "\N{<:mobile:725387684113023057>}": lambda x: x.is_on_mobile(),
+            "\N(<:mobile:725387684113023057>"): lambda x: x.is_on_mobile(),
         }
         member_msg = _("Users online: **{online}/{total_users}**\n").format(
             online=online, total_users=total_users
@@ -155,7 +155,7 @@ class ServerInfo(commands.Cog):
             "MEMBER_LIST_DISABLED": _("Member list disabled"),
         }
         guild_features_list = [
-            f"\<a:Yes:653111754683056158> {name}" for feature, name in features.items() if feature in guild.features
+            f"\<:greenTick:596576670815879169> {name}" for feature, name in features.items() if feature in guild.features
         ]
 
         since_joined = (ctx.message.created_at - guild.me.joined_at).days
