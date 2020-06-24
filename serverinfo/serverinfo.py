@@ -73,15 +73,15 @@ class ServerInfo(commands.Cog):
         # Logic from: https://github.com/TrustyJAID/Trusty-cogs/blob/master/serverstats/serverstats.py#L159
         online_stats = {
             _(" <:humans:724948692242792470> Humans: "): lambda x: not x.bot,
-            _(" <:bot:706196602804502678> Bots: "): lambda x: x.bot,
-            "\N{LARGE GREEN CIRCLE}": lambda x: x.status is discord.Status.online,
-            "\N{LARGE ORANGE CIRCLE}": lambda x: x.status is discord.Status.idle,
-            "\N{LARGE RED CIRCLE}": lambda x: x.status is discord.Status.do_not_disturb,
-            "\N{MEDIUM WHITE CIRCLE}": lambda x: x.status is discord.Status.offline,
-            "\N{LARGE PURPLE CIRCLE}": lambda x: any(
+            _(" <:bot:706196602804502678>Bots: "): lambda x: x.bot,
+            "\N{<:online:502680874370990091>}": lambda x: x.status is discord.Status.online,
+            "\N{<:idle:724950462729551883>}": lambda x: x.status is discord.Status.idle,
+            "\N{<:dnd:502680840392671232>}": lambda x: x.status is discord.Status.do_not_disturb,
+            "\N{<:offline:724950462746460271>}": lambda x: x.status is discord.Status.offline,
+            "\N{<:streaming:724950551900717066>}": lambda x: any(
                 a.type is discord.ActivityType.streaming for a in x.activities
             ),
-            "\N{MOBILE PHONE}": lambda x: x.is_on_mobile(),
+            "\N{<:mobile:725387684113023057>}": lambda x: x.is_on_mobile(),
         }
         member_msg = _("Users online: **{online}/{total_users}**\n").format(
             online=online, total_users=total_users
@@ -155,7 +155,7 @@ class ServerInfo(commands.Cog):
             "MEMBER_LIST_DISABLED": _("Member list disabled"),
         }
         guild_features_list = [
-            f"\✅ {name}" for feature, name in features.items() if feature in guild.features
+            f"\<a:Yes:653111754683056158> {name}" for feature, name in features.items() if feature in guild.features
         ]
 
         since_joined = (ctx.message.created_at - guild.me.joined_at).days
