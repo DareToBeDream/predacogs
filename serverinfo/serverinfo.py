@@ -222,7 +222,7 @@ class ServerInfo(commands.Cog):
         em.add_field(
             name=_("Misc:"),
             value=_(
-                "AFK channel: {afk_chan}\nAFK timeout: {afk_timeout}\nCustom emojis: {emojis}\nRoles: {roles}"
+                "💤 AFK channel: {afk_chan}\n<:afktimer:725443892266270842> AFK timeout: {afk_timeout}\n<:emoji:724948692427210763> Custom emojis: {emojis}\n<:roles:724948692322222090> Roles: {roles}"
             ).format(
                 afk_chan=bold(str(guild.afk_channel)) if guild.afk_channel else bold(_("Not set")),
                 afk_timeout=bold(humanize_timedelta(seconds=guild.afk_timeout)),
