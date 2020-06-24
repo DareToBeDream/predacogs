@@ -72,8 +72,8 @@ class ServerInfo(commands.Cog):
 
         # Logic from: https://github.com/TrustyJAID/Trusty-cogs/blob/master/serverstats/serverstats.py#L159
         online_stats = {
-            _("Humans: "): lambda x: not x.bot,
-            _(" • Bots: "): lambda x: x.bot,
+            _(":humans: Humans: "): lambda x: not x.bot,
+            _(" :bot: Bots: "): lambda x: x.bot,
             "\N{LARGE GREEN CIRCLE}": lambda x: x.status is discord.Status.online,
             "\N{LARGE ORANGE CIRCLE}": lambda x: x.status is discord.Status.idle,
             "\N{LARGE RED CIRCLE}": lambda x: x.status is discord.Status.do_not_disturb,
