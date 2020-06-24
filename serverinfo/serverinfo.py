@@ -73,7 +73,7 @@ class ServerInfo(commands.Cog):
         # Logic from: https://github.com/TrustyJAID/Trusty-cogs/blob/master/serverstats/serverstats.py#L159
         online_stats = {
             _("<:humans:724948692242792470> Humans: "): lambda x: not x.bot,
-            _("  |  <:bot:706196602804502678> Bots: "): lambda x: x.bot,
+            _(" | <:bot:706196602804502678> Bots: "): lambda x: x.bot,
             "\n<:online:502680874370990091>": lambda x: x.status is discord.Status.online,
             "<:idle:724950462729551883>": lambda x: x.status is discord.Status.idle,
             "<:dnd:502680840392671232>": lambda x: x.status is discord.Status.do_not_disturb,
@@ -204,6 +204,7 @@ class ServerInfo(commands.Cog):
                 else "",
                 voice=bold(humanize_number(voice_channels)),
             ),
+            inline=False,
         )
         em.add_field(
             name=_("Utility:"),
