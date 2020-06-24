@@ -209,7 +209,7 @@ class ServerInfo(commands.Cog):
         em.add_field(
             name=_("Utility:"),
             value=_(
-                "Owner: {owner}\nVoice region: {region}\nVerif. level: {verif}\nServer ID: {id}{shard}"
+                "<:owner:725387683811033140> Owner: {owner}\n<:guild_region:724948693798617098> Voice region: {region}\n<:verification_level:725387684406886481> Verif. level: {verif}\n<:serverid:725428612437639179> Server ID: {id}{shard}"
             ).format(
                 owner=bold(str(guild.owner)),
                 region=f"**{vc_regions.get(str(guild.region)) or str(guild.region)}**",
