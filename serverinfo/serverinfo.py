@@ -193,8 +193,8 @@ class ServerInfo(commands.Cog):
         em.add_field(
             name=_("Channels:"),
             value=_(
-                "\N{SPEECH BALLOON} Text: {text}\n{nsfw}"
-                "\N{SPEAKER WITH THREE SOUND WAVES} Voice: {voice}"
+                "\n<:text_channel:725390525863034971> Text: {text}\n{nsfw}"
+                "<:voice_channel:725390524986425377> Voice: {voice}"
             ).format(
                 text=bold(humanize_number(text_channels)),
                 nsfw=_("\N{NO ONE UNDER EIGHTEEN SYMBOL} Nsfw: {}\n").format(
