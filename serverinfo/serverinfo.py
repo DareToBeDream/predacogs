@@ -74,7 +74,7 @@ class ServerInfo(commands.Cog):
         online_stats = {
             _("<:humans:724948692242792470> Humans: "): lambda x: not x.bot,
             _(" <:bot:706196602804502678> Bots: "): lambda x: x.bot,
-            "\N{<:online:502680874370990091>}": lambda x: x.status is discord.Status.online,
+            "\N{LARGE GREEN CIRCLE}": lambda x: x.status is discord.Status.online,
             "\N{LARGE ORANGE CIRCLE}": lambda x: x.status is discord.Status.idle,
             "\N{LARGE RED CIRCLE}": lambda x: x.status is discord.Status.do_not_disturb,
             "\N{MEDIUM WHITE CIRCLE}": lambda x: x.status is discord.Status.offline,
