@@ -155,7 +155,7 @@ class ServerInfo(commands.Cog):
             "MEMBER_LIST_DISABLED": _("Member list disabled"),
         }
         guild_features_list = [
-            f"\<:greenTick:596576670815879169> {name}" for feature, name in features.items() if feature in guild.features
+            f"\n<:Verified:725450770107072532> {name}" for feature, name in features.items() if feature in guild.features
         ]
 
         since_joined = (ctx.message.created_at - guild.me.joined_at).days
