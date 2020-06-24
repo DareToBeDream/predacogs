@@ -76,7 +76,7 @@ class ServerInfo(commands.Cog):
             _(" | <:bot:706196602804502678> Bots: "): lambda x: x.bot,
             "\n<:online:502680874370990091>": lambda x: x.status is discord.Status.online,
             "<:idle:724950462729551883>": lambda x: x.status is discord.Status.idle,
-            "<:dnd:502680840392671232>": lambda x: x.status is discord.Status.do_not_disturb,
+            "<:do_not_disturb:724950462499127338>": lambda x: x.status is discord.Status.do_not_disturb,
             "<:offline:724950462746460271>": lambda x: x.status is discord.Status.offline,
             "<:streaming:724950551900717066>": lambda x: any(
                 a.type is discord.ActivityType.streaming for a in x.activities
@@ -155,7 +155,7 @@ class ServerInfo(commands.Cog):
             "MEMBER_LIST_DISABLED": _("Member list disabled"),
         }
         guild_features_list = [
-            f"\✅ {name}" for feature, name in features.items() if feature in guild.features
+            f"\<:greenTick:596576670815879169> {name}" for feature, name in features.items() if feature in guild.features
         ]
 
         since_joined = (ctx.message.created_at - guild.me.joined_at).days
