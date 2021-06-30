@@ -155,7 +155,7 @@ class ServerInfo(commands.Cog):
             "MEMBER_LIST_DISABLED": _("Member list disabled"),
         }
         guild_features_list = [
-            f"\n<:Verified:725450770107072532> {name}" for feature, name in features.items() if feature in guild.features
+            f"\n<:toggleon:859871633547984996> {name}" for feature, name in features.items() if feature in guild.features
         ]
 
         since_joined = (ctx.message.created_at - guild.me.joined_at).days
@@ -222,7 +222,7 @@ class ServerInfo(commands.Cog):
         em.add_field(
             name=_("Misc:"),
             value=_(
-                "💤 AFK channel: {afk_chan}\n<:afktimer:725443892266270842> AFK timeout: {afk_timeout}\n<:emoji:724948692427210763> Custom emojis: {emojis}\n<:roles:724948692322222090> Roles: {roles}"
+                "💤 AFK channel: {afk_chan}\n<:afktimer:725443892266270842> AFK timeout: {afk_timeout}\n<:emoji:859872281672941619> Custom emojis: {emojis}\n<:roles:859872311330996235> Roles: {roles}"
             ).format(
                 afk_chan=bold(str(guild.afk_channel)) if guild.afk_channel else bold(_("Not set")),
                 afk_timeout=bold(humanize_timedelta(seconds=guild.afk_timeout)),
