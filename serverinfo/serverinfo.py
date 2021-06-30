@@ -72,16 +72,16 @@ class ServerInfo(commands.Cog):
 
         # Logic from: https://github.com/TrustyJAID/Trusty-cogs/blob/master/serverstats/serverstats.py#L159
         online_stats = {
-            _("<:humans:724948692242792470> Humans: "): lambda x: not x.bot,
-            _(" | <:bot:706196602804502678> Bots: "): lambda x: x.bot,
-            "\n<:online:502680874370990091>": lambda x: x.status is discord.Status.online,
-            "<:idle:724950462729551883>": lambda x: x.status is discord.Status.idle,
-            "<:do_not_disturb:724950462499127338>": lambda x: x.status is discord.Status.do_not_disturb,
-            "<:offline:724950462746460271>": lambda x: x.status is discord.Status.offline,
-            "<:streaming:724950551900717066>": lambda x: any(
+            _("<:humans:859871850464804924> Humans: "): lambda x: not x.bot,
+            _(" | <:bots:859871879656243211> Bots: "): lambda x: x.bot,
+            "\n<:online:859871785310617630>": lambda x: x.status is discord.Status.online,
+            "<:idle:859874666440687616>": lambda x: x.status is discord.Status.idle,
+            "<:status_dnd:859874614514679858>": lambda x: x.status is discord.Status.do_not_disturb,
+            "<:offline:859874580398080001>": lambda x: x.status is discord.Status.offline,
+            "<:streaming:859875537156964412>": lambda x: any(
                 a.type is discord.ActivityType.streaming for a in x.activities
             ),
-            "<:mobile:725387684113023057>": lambda x: x.is_on_mobile(),
+            "<:mobile:859874682126467092>": lambda x: x.is_on_mobile(),
         }
         member_msg = _("Users online: **{online}/{total_users}**\n").format(
             online=online, total_users=total_users
@@ -193,8 +193,8 @@ class ServerInfo(commands.Cog):
         em.add_field(
             name=_("Channels:"),
             value=_(
-                "\n<:text_channel:725390525863034971> Text: {text}\n{nsfw}"
-                "<:voice_channel:725390524986425377> Voice: {voice}"
+                "\n<:text:859871929011535883> Text: {text}\n{nsfw}"
+                "<:voice:859871958661070920> Voice: {voice}"
             ).format(
                 text=bold(humanize_number(text_channels)),
                 nsfw=_("\N{NO ONE UNDER EIGHTEEN SYMBOL} Nsfw: {}\n").format(
@@ -209,7 +209,7 @@ class ServerInfo(commands.Cog):
         em.add_field(
             name=_("Utility:"),
             value=_(
-                "<:owner:725387683811033140> Owner: {owner}\n<:guild_region:724948693798617098> Voice region: {region}\n<:verification_level:725387684406886481> Verif. level: {verif}\n<:serverid:725428612437639179> Server ID: {id}{shard}"
+                "<:owner:859872053908602910> Owner: {owner}\n<:region:859872126529306634> Voice region: {region}\n<:verification_level:859872210171461653> Verif. level: {verif}\n<:serverid:859872250583711754> Server ID: {id}{shard}"
             ).format(
                 owner=bold(str(guild.owner)),
                 region=f"**{vc_regions.get(str(guild.region)) or str(guild.region)}**",
